@@ -30,9 +30,11 @@ console.log(typeValue("string"));
 console.log(typeValue(1));
 console.log(typeValue(false));
 
+
+console.log("************************** QUIZZ 2 **************************");
 // QUIZZ 2
 // crear una funcion que devuelva true si el numero es mayor a 5 y false si es menor o igual
-console.log("************************** QUIZZ 2 **************************");
+
 var compareNumbers = function(number) {
     boolean = number>5;
     return boolean;
@@ -41,3 +43,57 @@ var compareNumbers = function(number) {
 console.log(compareNumbers(5));
 console.log(compareNumbers(1));
 console.log(compareNumbers(6));
+
+
+console.log("************************** QUIZZ 3 **************************");
+// QUIZZ 3
+// la funcion recibe un array, un numero entero y un string con el nombre de un estudiante,
+// si death count es mayor a 0 la funcion debe eliminar la cantidad equivalente al numero en la lista de estudiantes desde el final hacia el
+// inicio, si el numero es 0 se debe dejar la lista como esta y simplemente agregar el nuevo estudiante al final de la lista
+
+export function solution(estudiantes, deathCount, nuevo) {
+    if (deathCount > 0) {
+      for (var i = 0; i < deathCount; i++) {
+        estudiantes.pop();
+      }
+      estudiantes.push(nuevo);
+      return estudiantes;
+    }
+    estudiantes.push(nuevo);
+    return estudiantes;
+}
+
+solution(["Nico", "Zule"], 0, "Santi");
+solution(["Juan", "Juanita", "Daniela"], 1, "Julian");
+solution(["Nath", "Luisa", "Noru"], 2, "Cami");
+
+
+console.log("************************** QUIZZ 4 **************************");
+// QUIZZ 4
+// Este objeto puede contener diferentes propiedades. Debes asegurarte de que tenga la propiedad licensePlate (la placa del auto). Si sí la tiene, devuelve el objeto original con la propiedad drivingLicense como true. Si no la tiene, devuelve el objeto original con la propiedad drivingLicense como false.
+
+export function solution(car) {
+    if (car['licensePlate'] != undefined) {
+      car['drivingLicense'] = true;
+      return car;
+    } else {
+      car['drivingLicense'] = false;
+      return car;
+    }
+  }
+  
+// Prueba 1
+solution({
+    color: 'red',
+    brand: 'Kia',
+  });
+  
+  // Prueba 2
+  solution({
+    color: 'gray',
+    brand: 'Chevrolet',
+    licensePlate: 'AAA111',
+  });
+  
+  // Prueba 3
+  solution({ licensePlate: 'RGB255'  });
