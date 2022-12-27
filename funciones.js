@@ -84,16 +84,31 @@ export function solution(car) {
   
 // Prueba 1
 solution({
-    color: 'red',
-    brand: 'Kia',
-  });
-  
-  // Prueba 2
-  solution({
-    color: 'gray',
-    brand: 'Chevrolet',
-    licensePlate: 'AAA111',
-  });
-  
-  // Prueba 3
-  solution({ licensePlate: 'RGB255'  });
+  color: 'red',
+  brand: 'Kia',
+});
+
+// Prueba 2
+solution({
+  color: 'gray',
+  brand: 'Chevrolet',
+  licensePlate: 'AAA111',
+});
+
+// Prueba 3
+solution({ licensePlate: 'RGB255'  });
+
+
+console.log("************************** QUIZZ 4 **************************");
+// En este desafío debes ayudarnos a arreglar la función solution.
+// Esta recibe un array cars y debería retornar el array filtrado únicamente con los objetos que tengan la propiedad licensePlate.
+// Pero no está funcionando.
+// La función solo devuelve un objeto con el primer elemento que cumple los requisitos, no estamos recibiendo los demás elementos del array que también deberían pasar el filtro.
+
+
+export function solution(cars) {
+  var filtered_cars = cars.filter(function (car) {
+    return car.licensePlate != undefined;
+  })
+  return filtered_cars
+}
